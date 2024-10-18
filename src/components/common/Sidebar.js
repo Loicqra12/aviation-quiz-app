@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'; 
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   return (
-    <nav className="bg-blue-900 w-64 text-white py-4 h-screen">
+    <nav className="bg-blue-900 w-64 text-white py-4 h-screen fixed top-0 left-0">
       <div className="text-center text-2xl font-semibold mb-8">FlyBy</div>
       <ul className="space-y-4">
         <li className="px-6 py-2 hover:bg-blue-700">
@@ -24,7 +24,6 @@ const Sidebar = () => {
             <span className="ml-2">Grades</span>
           </Link>
         </li>
-        {/* Updated Question Bank */}
         <li className="px-6 py-2 hover:bg-blue-700">
           <Link to="/question-bank/test" className="flex items-center"> 
             <span className="material-icons">quiz</span>

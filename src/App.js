@@ -8,9 +8,13 @@ import TestPage from './pages/TestPage'; // Importation de TestPage
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-100 flex">
+      <div className="flex">
+        {/* Sidebar */}
         <Sidebar />
-        <main className="flex-1 py-8 px-10">
+
+        {/* Main Content */}
+        <main className="flex-1 ml-64 py-8 px-10 bg-gray-100 min-h-screen">
+          {/* Routes */}
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/quiz/:subject" element={<QuizPage />} />
