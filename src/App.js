@@ -1,20 +1,30 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/common/Navbar';
+import Sidebar from './components/common/Sidebar';
 import HomePage from './pages/HomePage';
-import QuizPage from './pages/QuizPage';  // Ajout de l'import
+import QuizPage from './pages/QuizPage';
+import TestPage from './pages/TestPage'; // Importation de TestPage
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-100">
-        <Navbar />
-        <main className="py-8">
+      <div className="min-h-screen bg-gray-100 flex">
+        <Sidebar />
+        <main className="flex-1 py-8 px-10">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/quiz/:subject" element={<QuizPage />} />  {/* Nouvelle route */}
-            <Route path="/stats" element={<div className="container mx-auto px-4">Page Statistiques</div>} />
-            <Route path="/profile" element={<div className="container mx-auto px-4">Page Profil</div>} />
+            <Route path="/quiz/:subject" element={<QuizPage />} />
+            <Route path="/stats" element={<div className="container mx-auto">Page Statistiques</div>} />
+            <Route path="/profile" element={<div className="container mx-auto">Page Profil</div>} />
+            <Route path="/courses" element={<div className="container mx-auto">Page Courses</div>} />
+            <Route path="/grades" element={<div className="container mx-auto">Page Grades</div>} />
+            <Route path="/question-bank/test" element={<TestPage />} /> {/* Redirection vers TestPage */}
+            <Route path="/aviation-news" element={<div className="container mx-auto">Page Aviation News</div>} />
+            <Route path="/flights" element={<div className="container mx-auto">Page Flights</div>} />
+            <Route path="/agenda" element={<div className="container mx-auto">Page Agenda</div>} />
+            <Route path="/customer-service" element={<div className="container mx-auto">Page Customer Service</div>} />
+            <Route path="/messages" element={<div className="container mx-auto">Page Messages</div>} />
+            <Route path="/call-meeting" element={<div className="container mx-auto">Page Call Meeting</div>} />
           </Routes>
         </main>
       </div>
